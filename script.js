@@ -46,45 +46,8 @@ var confirmationAlert = document.getElementById("confirmationAlert");
 function showConfirmationAlert() {
     confirmationAlert.style.display = "block";
 
-    // Desaparecer la alerta después de 3 segundos (ajusta el tiempo según tus necesidades)
+    // Desaparecer la alerta después de 3 segundos
     setTimeout(function () {
         confirmationAlert.style.display = "none";
     }, 3000);
-}
-
-// Obtener referencia al formulario
-var form = document.getElementById("confirmation-form");
-
-// Agregar un evento de escucha al evento submit del formulario
-form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const myForm = event.target;
-    const formData = new FormData(myForm);
-
-    fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
-    })
-        .then(() => showConfirmationAlert())
-        .catch((error) => alert(error));
-});
-
-// Actualizar el contador cada segundo
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-function initMap() {
-    var location = { lat: 20.5621842, lng: -103.4823937 };
-    var mapOptions = {
-        zoom: 17,
-        center: location
-    };
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map,
-        title: "Quinta los Agapantos"
-    });
 }
