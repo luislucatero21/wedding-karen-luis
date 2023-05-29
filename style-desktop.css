@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#qr-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.qr-container {
+    text-align: center;
+}
+
+.qr-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#qr-code {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
