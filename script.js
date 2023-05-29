@@ -39,6 +39,27 @@ function formatNumber(number) {
   return number < 10 ? '0' + number : number;
 }
 
+// Obtener referencia al elemento de la alerta de confirmación
+var confirmationAlert = document.getElementById("confirmationAlert");
+
+// Mostrar la alerta de confirmación
+function showConfirmationAlert() {
+  confirmationAlert.style.display = "block";
+  
+  // Desaparecer la alerta después de 3 segundos (ajusta el tiempo según tus necesidades)
+  setTimeout(function() {
+    confirmationAlert.style.display = "none";
+  }, 3000);
+}
+
+// Obtener referencia al formulario
+var form = document.getElementById("confirmation-form");
+
+// Agregar un evento de escucha al evento submit del formulario
+form.addEventListener("submit", function(event) {
+  showConfirmationAlert(); // Mostrar la alerta de confirmación
+});
+
 // Actualizar el contador cada segundo
 setInterval(updateCountdown, 1000);
 updateCountdown();

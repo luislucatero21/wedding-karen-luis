@@ -86,7 +86,7 @@
 
       <div class="rsvp-section">
         <h2>Confirmación de Asistencia</h2>
-        <form name="confirmacion" netlify>
+        <form id="confirmation-form" name="confirmacion" action="javascript:void(0);" data-netlify="true">
           <div class="form-group">
             <label for="fullname">Nombre completo</label>
             <input id="fullname" name="nombre-completo" type="text" required />
@@ -114,6 +114,11 @@
         </form>
       </div>
 
+    </div>
+
+    <!-- Elemento de la alerta de confirmación -->
+    <div id="confirmationAlert" class="confirmation-alert" style="display: none;">
+      ¡Formulario enviado con éxito!
     </div>
 
     <script src="script.js"></script>
