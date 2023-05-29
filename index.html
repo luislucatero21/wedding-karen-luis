@@ -2,12 +2,12 @@
 <html>
 
 <head>
-  <base target="_top">
+  <meta charset="UTF-8">
   <title>Boda Karen & Luis</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -46,82 +46,83 @@
         <div class="countdown-label">Segundos</div>
       </div>
     </div>
+  </div>
 
-    <div class="info-section">
-      <div class="info-header">
-        <h2>Lo que tienes que saber</h2>
-      </div>
+  <!-- General Info -->
+  <div class="info-section">
+    <div class="info-header">
+      <h2>Lo que tienes que saber</h2>
+    </div>
 
-      <div class="dress-code-section">
-        <h2>Código de Vestimenta</h2>
-        <div class="dress-code-container">
-          <div class="dress-code-item">
-            <i class="fas fa-user-tie"></i>
-            <p>Hombres: Traje, Corbata o Moño</p>
-          </div>
-          <div class="dress-code-item">
-            <i class="fas fa-female"></i>
-            <p>Mujeres: Vestidos o Traje</p>
-          </div>
+    <div class="dress-code-section">
+      <h2>Código de Vestimenta</h2>
+      <div class="dress-code-container">
+        <div class="dress-code-item">
+          <i class="fas fa-user-tie"></i>
+          <p>Hombres: Traje, Corbata o Moño</p>
+        </div>
+        <div class="dress-code-item">
+          <i class="fas fa-female"></i>
+          <p>Mujeres: Vestidos o Traje</p>
         </div>
       </div>
+    </div>
 
-      <div class="map-section">
-        <h2>Ceremonia</h2>
-        <h2>Se celebrara en Iglesia San Juan Pablo II</h2>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3736.33854902951!2d-103.4786147!3d20.5333245!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f54eb8f5098d5%3A0x4358835f67f1c07f!2sParroquia%20San%20Juan%20Pablo%20II!5e0!3m2!1ses!2smx!4v1685322219282!5m2!1ses!2smx"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+    <div class="map-section">
+      <h2>Ceremonia</h2>
+      <h3>Se celebrara en Iglesia San Juan Pablo II</h2>
+        <h3>7:00 pm a 8:00 pm</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3736.33854902951!2d-103.4786147!3d20.5333245!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f54eb8f5098d5%3A0x4358835f67f1c07f!2sParroquia%20San%20Juan%20Pablo%20II!5e0!3m2!1ses!2smx!4v1685322219282!5m2!1ses!2smx"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 
-      <div class="map-section">
-        <h2>Fiesta</h2>
-        <h2>Quinta los Agapantos</h2>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3735.633183065278!2d-103.4798188!3d20.5621842!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ab34abadeeef%3A0xd1064427b36cb43e!2sQuinta%20Los%20Agapantos!5e0!3m2!1ses!2smx!4v1685334356551!5m2!1ses!2smx"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+    <div class="map-section">
+      <h2>Fiesta</h2>
+      <h3>Quinta los Agapantos</h2>
+        <h3>8:30 pm</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3735.633183065278!2d-103.4798188!3d20.5621842!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ab34abadeeef%3A0xd1064427b36cb43e!2sQuinta%20Los%20Agapantos!5e0!3m2!1ses!2smx!4v1685334356551!5m2!1ses!2smx"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    </div>
 
-      <div class="rsvp-section"><h2>Confirmación de Asistencia</h2>
+    <!-- Confirmación -->
+    <div class="rsvp-section">
+      <h2>Confirmación de Asistencia</h2>
       <form id="confirmation-form" name="confirmacion" action="/confirmation.html" data-netlify="true">
         <input type="hidden" name="form-name" value="confirmacion" />
-          <div class="form-group">
-            <label for="fullname">Nombre completo</label>
-            <input id="fullname" name="nombre-completo" type="text" required />
+        <div class="form-group">
+          <label for="fullname">Nombre completo</label>
+          <input id="fullname" name="nombre-completo" type="text" required />
+        </div>
+
+        <div class="form-group">
+          <label>Confirmación</label>
+          <div class="radio-options">
+            <input type="radio" name="confirmacion" value="Sí asistiré" id="option-1" required />
+            <label for="option-1">Sí asistiré</label>
+
+            <input type="radio" name="confirmacion" value="No asistiré" id="option-2" required />
+            <label for="option-2">No asistiré</label>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label>Confirmación</label>
-            <div class="radio-options">
-              <input type="radio" name="confirmacion" value="Sí asistiré" id="option-1" required />
-              <label for="option-1">Sí asistiré</label>
+        <div class="form-group">
+          <label for="contact">Whatsapp/Teléfono</label>
+          <input id="contact" name="numero" type="text" required />
+        </div>
 
-              <input type="radio" name="confirmacion" value="No asistiré" id="option-2" required />
-              <label for="option-2">No asistiré</label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="contact">Whatsapp/Teléfono</label>
-            <input id="contact" name="numero" type="text" required />
-          </div>
-
-          <div class="form-group">
-            <input type="submit" value="Enviar" />
-          </div>
-        </form>
-      </div>
-
+        <div class="form-group">
+          <input type="submit" value="Enviar" />
+        </div>
+      </form>
     </div>
+  </div>
 
-    <!-- Elemento de la alerta de confirmación -->
-    <div id="confirmationAlert" class="confirmation-alert" style="display: none;">
-      ¡Formulario enviado con éxito!
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
