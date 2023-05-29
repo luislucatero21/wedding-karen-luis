@@ -14,29 +14,29 @@ var secondsElement = document.getElementById('seconds');
 
 // Función para actualizar el contador
 function updateCountdown() {
-  // Obtener la fecha actual y la fecha de la boda
-  var currentDate = new Date();
-  var weddingDate = new Date('2023-11-04T23:59:00');
+    // Obtener la fecha actual y la fecha de la boda
+    var currentDate = new Date();
+    var weddingDate = new Date('2023-11-04T23:59:00');
 
-  // Calcular la diferencia en días, horas, minutos y segundos
-  var timeDifference = weddingDate.getTime() - currentDate.getTime();
-  var totalSecondsDifference = Math.floor(timeDifference / 1000);
+    // Calcular la diferencia en días, horas, minutos y segundos
+    var timeDifference = weddingDate.getTime() - currentDate.getTime();
+    var totalSecondsDifference = Math.floor(timeDifference / 1000);
 
-  var daysDifference = Math.floor(totalSecondsDifference / (60 * 60 * 24));
-  var hoursDifference = Math.floor((totalSecondsDifference % (60 * 60 * 24)) / (60 * 60));
-  var minutesDifference = Math.floor((totalSecondsDifference % (60 * 60)) / 60);
-  var secondsDifference = totalSecondsDifference % 60;
+    var daysDifference = Math.floor(totalSecondsDifference / (60 * 60 * 24));
+    var hoursDifference = Math.floor((totalSecondsDifference % (60 * 60 * 24)) / (60 * 60));
+    var minutesDifference = Math.floor((totalSecondsDifference % (60 * 60)) / 60);
+    var secondsDifference = totalSecondsDifference % 60;
 
-  // Actualizar los números del contador con los valores calculados
-  daysElement.textContent = formatNumber(daysDifference);
-  hoursElement.textContent = formatNumber(hoursDifference);
-  minutesElement.textContent = formatNumber(minutesDifference);
-  secondsElement.textContent = formatNumber(secondsDifference);
+    // Actualizar los números del contador con los valores calculados
+    daysElement.textContent = formatNumber(daysDifference);
+    hoursElement.textContent = formatNumber(hoursDifference);
+    minutesElement.textContent = formatNumber(minutesDifference);
+    secondsElement.textContent = formatNumber(secondsDifference);
 }
 
 // Función para agregar un cero al principio si el número es menor a 10
 function formatNumber(number) {
-  return number < 10 ? '0' + number : number;
+    return number < 10 ? '0' + number : number;
 }
 
 // Obtener referencia al elemento de la alerta de confirmación
@@ -44,20 +44,31 @@ var confirmationAlert = document.getElementById("confirmationAlert");
 
 // Mostrar la alerta de confirmación
 function showConfirmationAlert() {
-  confirmationAlert.style.display = "block";
-  
-  // Desaparecer la alerta después de 3 segundos (ajusta el tiempo según tus necesidades)
-  setTimeout(function() {
-    confirmationAlert.style.display = "none";
-  }, 3000);
+    confirmationAlert.style.display = "block";
+
+    // Desaparecer la alerta después de 3 segundos (ajusta el tiempo según tus necesidades)
+    setTimeout(function () {
+        confirmationAlert.style.display = "none";
+    }, 3000);
 }
 
 // Obtener referencia al formulario
 var form = document.getElementById("confirmation-form");
 
 // Agregar un evento de escucha al evento submit del formulario
-form.addEventListener("submit", function(event) {
-  showConfirmationAlert(); // Mostrar la alerta de confirmación
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+    })
+        .then(() => showConfirmationAlert())
+        .catch((error) => alert(error));
 });
 
 // Actualizar el contador cada segundo
@@ -67,13 +78,13 @@ updateCountdown();
 function initMap() {
     var location = { lat: 20.5621842, lng: -103.4823937 };
     var mapOptions = {
-      zoom: 17,
-      center: location
+        zoom: 17,
+        center: location
     };
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     var marker = new google.maps.Marker({
-      position: location,
-      map: map,
-      title: "Quinta los Agapantos"
+        position: location,
+        map: map,
+        title: "Quinta los Agapantos"
     });
-  }
+}
