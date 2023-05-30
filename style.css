@@ -95,11 +95,21 @@ nav a.active {
 }
 
 .date-text {
-    font-family: 'Alex Brush';
+    font-family: 'Alex Brush', cursive;
     margin-top: 0px;
     text-align: center;
     padding: 100px 0px 0px 0px;
+    font-weight: 100px;
+}
+
+.date-text #date-text-a {
     font-size: 96px;
+    margin: 0px;
+}
+
+.date-text #date-text-b {
+    font-size: 128px;
+    margin: 0px;
 }
 
 .wedding-date {
@@ -176,11 +186,11 @@ section h2 {
 }
 
 .countdown-number {
-    width: 60px;
-    height: 60px;
+    width: 150px;
+    height: 150px;
     background-color: #222;
     color: #fff;
-    font-size: 24px;
+    font-size: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -189,7 +199,7 @@ section h2 {
 
 .countdown-label {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 32px;
     text-align: center;
 }
 
