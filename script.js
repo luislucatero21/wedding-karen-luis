@@ -5,6 +5,29 @@ if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
     window.location.href = 'index-desktop.html';
 }
 
+// Actualizacion de imagenes
+const slides = Array.from(document.querySelectorAll('.hero-slide'));
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    if (i === index) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+}
+
+function changeSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+showSlide(currentSlide);
+setInterval(changeSlide, 5000);
+
+
 
 // Obtener los elementos HTML de los números del contador
 var daysElement = document.getElementById('days');
